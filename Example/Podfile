@@ -1,0 +1,6 @@
+use_frameworks!
+target 'AXACOREMODULE_Tests' do
+  pod 'AXACOREMODULE', :path => '../'
+  
+  
+end
