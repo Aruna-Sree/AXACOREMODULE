@@ -1,0 +1,22 @@
+{
+  "name": "AXACOREMODULE",
+  "version": "0.1.0",
+  "summary": "A short description of AXACOREMODULE.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/ArunaYarra/AXACOREMODULE",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "ArunaYarra": "aruna.yarra@broadcom.com"
+  },
+  "source": {
+    "git": "https://github.com/ArunaYarra/AXACOREMODULE.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "AXACOREMODULE/Classes/**/*"
+}

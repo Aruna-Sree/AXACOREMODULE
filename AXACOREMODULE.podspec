@@ -8,30 +8,30 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AXACOREMODULE'
-  s.version          = '0.1.0'
+  s.version          = '1.0'
   s.summary          = 'A short description of AXACOREMODULE.'
+  s.description      = 'Testing module'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
-  s.homepage         = 'https://github.com/ArunaYarra/AXACOREMODULE'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/Aruna-Sree/AXACOREMODULE'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'ArunaYarra' => 'aruna.yarra@broadcom.com' }
-  s.source           = { :git => 'https://github.com/ArunaYarra/AXACOREMODULE.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'Aruna' => 'arunaiosdev@gmail.com' }
+  s.source           = { :git => 'https://github.com/Aruna-Sree/AXACOREMODULE.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'AXACOREMODULE/Classes/**/*'
   
+  s.static_framework = true
+  s.dependency 'CAMobileAppAnalytics'
+  def s.post_install(target)
+      puts "post_install comamnd runing"
+      puts config.project_pods_root
+      ref = config.project_pods_root.files.select { |project_file| project_file.display_name == "CAMDOReporter.h" }[0]
+      puts ref
+      header = target.headers_build_phase.add_file_reference(ref)
+      header.settings = { 'ATTRIBUTES' => ['Public'] }
+  end
+
   # s.resource_bundles = {
   #   'AXACOREMODULE' => ['AXACOREMODULE/Assets/*.png']
   # }
