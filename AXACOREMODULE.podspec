@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AXACOREMODULE'
-  s.version          = '1.0'
+  s.version          = '1.0.1'
   s.summary          = 'A short description of AXACOREMODULE.'
   s.description      = 'Testing module'
 
@@ -23,14 +23,14 @@ Pod::Spec.new do |s|
   
   s.static_framework = true
   s.dependency 'CAMobileAppAnalytics'
-  def s.post_install(target)
-      puts "post_install comamnd runing"
-      puts config.project_pods_root
-      ref = config.project_pods_root.files.select { |project_file| project_file.display_name == "CAMDOReporter.h" }[0]
-      puts ref
-      header = target.headers_build_phase.add_file_reference(ref)
-      header.settings = { 'ATTRIBUTES' => ['Public'] }
-  end
+  # def s.post_install(target)
+  #     puts "post_install comamnd runing"
+  #     puts config.project_pods_root
+  #     ref = config.project_pods_root.files.select { |project_file| project_file.display_name == "CAMDOReporter.h" }[0]
+  #     puts ref
+  #     header = target.headers_build_phase.add_file_reference(ref)
+  #     header.settings = { 'ATTRIBUTES' => ['Public'] }
+  # end
 
   # s.resource_bundles = {
   #   'AXACOREMODULE' => ['AXACOREMODULE/Assets/*.png']
@@ -39,4 +39,6 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+
+  s.prepare_command= "sudo sh CoreModuleDependency.sh"
 end
