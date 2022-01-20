@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AXACOREMODULE'
-  s.version          = '1.1.4'
+  s.version          = '1.1.5'
   s.summary          = 'A short description of AXACOREMODULE.'
   s.description      = 'Testing module'
 
@@ -66,5 +66,5 @@ Pod::Spec.new do |s|
 # end' >> ./Podfile
 #                       CMD
 
-s.prepare_command = 'ruby ModuleDep.rb'
+s.prepare_command = 'ruby dependency.rb'
 end
