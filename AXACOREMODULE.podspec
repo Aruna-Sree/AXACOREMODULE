@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AXACOREMODULE'
-  s.version          = '1.2.0'
+  s.version          = '1.2.1'
   s.summary          = 'A short description of AXACOREMODULE.'
   s.description      = 'Testing module'
 
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.resources = 'dependency.rb'
   s.script_phases = [
   { :name => 'Precompile',
-    :script => '${PODS_TARGET_SRCROOT}/dependency.rb',
+    :script => 'ruby ${PODS_TARGET_SRCROOT}/dependency.rb',
     :execution_position => :before_compile
   }
 ]
