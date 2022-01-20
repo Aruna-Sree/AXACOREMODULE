@@ -65,5 +65,5 @@ Pod::Spec.new do |s|
 # end' >> ./Podfile
 #                       CMD
 
-s.prepare_command = 'ruby dependency.rb'
+# s.prepare_command = 'ruby dependency.rb'
 end
