@@ -23,14 +23,14 @@ Pod::Spec.new do |s|
   
 
 
-  s.source_files = 'CAMobileAppAnalytics/**/*.h'
-  s.public_header_files = 'CAMobileAppAnalytics/**/*.h'
-  s.resources = 'CAMobileAppAnalytics/**/*.js'
-  s.vendored_libraries = 'CAMobileAppAnalytics/**/*.a'
+  # s.source_files = 'CAMobileAppAnalytics/**/*.h'
+  # s.public_header_files = 'CAMobileAppAnalytics/**/*.h'
+  # s.resources = 'CAMobileAppAnalytics/**/*.js'
+  # s.vendored_libraries = 'CAMobileAppAnalytics/**/*.a'
   
-  s.libraries = 'c++', 'z', 'sqlite3'
-  s.frameworks = 'CoreLocation', 'SystemConfiguration', 'Foundation', 'UIKit', 'CoreGraphics', 'Security', 'CoreTelephony', 'WebKit'
-  s.requires_arc = true
+  # s.libraries = 'c++', 'z', 'sqlite3'
+  # s.frameworks = 'CoreLocation', 'SystemConfiguration', 'Foundation', 'UIKit', 'CoreGraphics', 'Security', 'CoreTelephony', 'WebKit'
+  # s.requires_arc = true
   
   # s.static_framework = true
   # s.dependency 'CAMobileAppAnalytics'
