@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AXACOREMODULE'
-  s.version          = '1.0.6'
+  s.version          = '1.0.7'
   s.summary          = 'A short description of AXACOREMODULE.'
   s.description      = 'Testing module'
 
@@ -60,6 +60,6 @@ Pod::Spec.new do |s|
       header.settings = { 'ATTRIBUTES' => ['Public'] }
     end
   end
-end' >> ../../Podfile
+end' >> ./Podfile
                       CMD
 end
