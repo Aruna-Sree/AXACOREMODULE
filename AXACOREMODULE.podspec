@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AXACOREMODULE'
-  s.version          = '1.0.5'
+  s.version          = '1.0'
   s.summary          = 'A short description of AXACOREMODULE.'
   s.description      = 'Testing module'
 
@@ -50,6 +50,16 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
-
-  # s.prepare_command = "sudo sh CoreModuleDependency.sh"
+# sed -i -e '$a\TEXTTOEND' 'Podfile'
+  s.prepare_command = <<-CMD
+                          echo 'post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if target.name  == "CommonPod"
+      ref = installer.pods_project.files.select { |project_file| project_file.display_name == "CAMDOReporter.h" }[0]
+      header = target.headers_build_phase.add_file_reference(ref)
+      header.settings = { 'ATTRIBUTES' => ['Public'] }
+    end
+  end
+end' >> ../../Podfile
+                      CMD
 end
