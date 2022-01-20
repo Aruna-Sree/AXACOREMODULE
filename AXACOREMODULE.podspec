@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AXACOREMODULE'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'A short description of AXACOREMODULE.'
   s.description      = 'Testing module'
 
@@ -21,8 +21,19 @@ Pod::Spec.new do |s|
 
   s.source_files = 'AXACOREMODULE/Classes/**/*'
   
-  s.static_framework = true
-  s.dependency 'CAMobileAppAnalytics'
+
+
+  s.source_files = 'CAMobileAppAnalytics/**/*.h'
+  s.public_header_files = 'CAMobileAppAnalytics/**/*.h'
+  s.resources = 'CAMobileAppAnalytics/**/*.js'
+  s.vendored_libraries = 'CAMobileAppAnalytics/**/*.a'
+  
+  s.libraries = 'c++', 'z', 'sqlite3'
+  s.frameworks = 'CoreLocation', 'SystemConfiguration', 'Foundation', 'UIKit', 'CoreGraphics', 'Security', 'CoreTelephony', 'WebKit'
+  s.requires_arc = true
+  
+  # s.static_framework = true
+  # s.dependency 'CAMobileAppAnalytics'
   # def s.post_install(target)
   #     puts "post_install comamnd runing"
   #     puts config.project_pods_root
@@ -40,5 +51,5 @@ Pod::Spec.new do |s|
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 
-  s.prepare_command = "sudo sh CoreModuleDependency.sh"
+  # s.prepare_command = "sudo sh CoreModuleDependency.sh"
 end
