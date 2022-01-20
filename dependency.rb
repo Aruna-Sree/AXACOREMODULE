@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 require 'xcodeproj'
-basePath=File.dirname(__FILE__)
-puts basePath
-puts Dir.pwd
-#puts ${PODS_TARGET_SRCROOT}
+#basePath=File.dirname(__FILE__)
+#puts basePath
+#puts Dir.pwd
+##puts ${PODS_TARGET_SRCROOT}
 
-project_path = 'Pods/Pods.xcodeproj/'
+project_path = '../Pods.xcodeproj/'
 project = Xcodeproj::Project.open(project_path)
 project.targets.each do |target|
     if target.name == "AXACOREMODULE"
