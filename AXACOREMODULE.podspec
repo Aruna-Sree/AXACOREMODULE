@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AXACOREMODULE'
-  s.version          = '1.0.8'
+  s.version          = '1.0.9'
   s.summary          = 'A short description of AXACOREMODULE.'
   s.description      = 'Testing module'
 
@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
   # s.frameworks = 'CoreLocation', 'SystemConfiguration', 'Foundation', 'UIKit', 'CoreGraphics', 'Security', 'CoreTelephony', 'WebKit'
   # s.requires_arc = true
   
-  # s.static_framework = true
+  s.static_framework = true
   s.dependency 'CAMobileAppAnalytics'
   # def s.post_install(target)
   #     puts "post_install comamnd runing"
