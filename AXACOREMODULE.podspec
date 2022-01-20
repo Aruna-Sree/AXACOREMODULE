@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
   
   # s.static_framework = true
-  # s.dependency 'CAMobileAppAnalytics'
+  s.dependency 'CAMobileAppAnalytics'
   # def s.post_install(target)
   #     puts "post_install comamnd runing"
   #     puts config.project_pods_root
