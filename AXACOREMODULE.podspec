@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AXACOREMODULE'
-  s.version          = '1.0'
+  s.version          = '1.0.6'
   s.summary          = 'A short description of AXACOREMODULE.'
   s.description      = 'Testing module'
 
