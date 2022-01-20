@@ -22,7 +22,7 @@ pod 'AXACOREMODULE'
 
 ## Author
 
-ArunaYarra, aruna.yarra@broadcom.com
+Aruna, arunaiosdev@gmail.com
 
 ## License
 
