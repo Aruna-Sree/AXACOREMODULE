@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AXACOREMODULE'
-  s.version          = '1.1.1'
+  s.version          = '1.1.2'
   s.summary          = 'A short description of AXACOREMODULE.'
   s.description      = 'Testing module'
 
@@ -34,9 +34,9 @@ Pod::Spec.new do |s|
   
   s.static_framework = true
   s.dependency 'CAMobileAppAnalytics'
-  s.pod_target_xcconfig = {
-    'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'
-  }
+  # s.pod_target_xcconfig = {
+  #   'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'
+  # }
   # def s.post_install(target)
   #     puts "post_install comamnd runing"
   #     puts config.project_pods_root
@@ -57,7 +57,7 @@ Pod::Spec.new do |s|
 #   s.prepare_command = <<-CMD
 #                           echo 'post_install do |installer|
 #   installer.pods_project.targets.each do |target|
-#     if target.name  == "CommonPod"
+#     if target.name  == "AXACOREMODULE"
 #       ref = installer.pods_project.files.select { |project_file| project_file.display_name == "CAMDOReporter.h" }[0]
 #       header = target.headers_build_phase.add_file_reference(ref)
 #       header.settings = { 'ATTRIBUTES' => ['Public'] }
@@ -65,4 +65,6 @@ Pod::Spec.new do |s|
 #   end
 # end' >> ./Podfile
 #                       CMD
+
+s.prepare_command = 'ruby ModuleDep.rb'
 end
