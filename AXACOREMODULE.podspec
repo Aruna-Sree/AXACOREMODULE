@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AXACOREMODULE'
-  s.version          = '1.0.9'
+  s.version          = '1.1.0'
   s.summary          = 'A short description of AXACOREMODULE.'
   s.description      = 'Testing module'
 
@@ -34,6 +34,7 @@ Pod::Spec.new do |s|
   
   s.static_framework = true
   s.dependency 'CAMobileAppAnalytics'
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
   # def s.post_install(target)
   #     puts "post_install comamnd runing"
   #     puts config.project_pods_root
