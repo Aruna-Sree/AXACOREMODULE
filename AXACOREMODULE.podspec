@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AXACOREMODULE'
-  s.version          = '1.2.7'
+  s.version          = '1.2.8'
   s.summary          = 'A short description of AXACOREMODULE.'
   s.description      = 'Testing module'
 
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'AXACOREMODULE/Classes/**/*'
-  s.resources = 'dependency.rb'
+  # s.resources = 'dependency.rb'
 #   s.script_phases = [
 #   { :name => 'Precompile',
 #     :script => 'cd "${PODS_TARGET_SRCROOT}"
