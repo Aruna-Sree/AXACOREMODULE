@@ -2,7 +2,7 @@
 require 'xcodeproj'
 require 'shellwords'
 
-project_path = 'Pods.xcodeproj/'
+project_path = '../Pods.xcodeproj/'
 project_path = "#{project_path}".shellescape
 project = Xcodeproj::Project.open(project_path)
 project.targets.each do |target|
