@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AXACOREMODULE'
-  s.version          = '1.2.1'
+  s.version          = '1.2.2'
   s.summary          = 'A short description of AXACOREMODULE.'
   s.description      = 'Testing module'
 
@@ -24,10 +24,13 @@ Pod::Spec.new do |s|
   s.script_phases = [
   { :name => 'Precompile',
     :script => 'ruby ${PODS_TARGET_SRCROOT}/dependency.rb',
+    :shell_path => '/usr/bin/ruby',
     :execution_position => :before_compile
   }
 ]
 
+  s.static_framework = true
+  s.dependency 'CAMobileAppAnalytics'
 
   # s.source_files = 'CAMobileAppAnalytics/**/*.h'
   # s.public_header_files = 'CAMobileAppAnalytics/**/*.h'
@@ -38,8 +41,7 @@ Pod::Spec.new do |s|
   # s.frameworks = 'CoreLocation', 'SystemConfiguration', 'Foundation', 'UIKit', 'CoreGraphics', 'Security', 'CoreTelephony', 'WebKit'
   # s.requires_arc = true
   
-  s.static_framework = true
-  s.dependency 'CAMobileAppAnalytics'
+
   # s.pod_target_xcconfig = {
   #   'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'
   # }
