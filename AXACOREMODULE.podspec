@@ -20,15 +20,17 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'AXACOREMODULE/Classes/**/*'
-  
   s.resources = 'dependency.rb'
-  s.script_phase = { :name => 'Precompile',
-                      :script => 'cd "${PODS_TARGET_SRCROOT}"
+  s.script_phases = [
+  { :name => 'Precompile',
+    :script => 'cd "${PODS_TARGET_SRCROOT}"
                 ruby dependency.rb
                 cd - ',
-                      :execution_position => :before_compile
-                    }
+    :execution_position => :before_compile
+  }
+]
 
   s.static_framework = true
   s.dependency 'CAMobileAppAnalytics'
+# s.prepare_command = 'ruby dependency.rb'
 end
