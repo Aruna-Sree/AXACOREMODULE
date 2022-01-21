@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 require 'xcodeproj'
+require 'shellwords'
 
 project_path = 'Pods.xcodeproj/'
 project_path = "#{project_path}".shellescape
-puts project_path
 project = Xcodeproj::Project.open(project_path)
 project.targets.each do |target|
     if target.name == "AXACOREMODULE" && !(target.headers_build_phase.file_display_names.include? "CAMDOReporter.h")
@@ -14,3 +14,4 @@ project.targets.each do |target|
         project.save
     end
 end
+
