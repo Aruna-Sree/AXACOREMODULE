@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.source_files = 'AXACOREMODULE/Classes/**/*'
   
   s.resources = 'dependency.rb'
-  s.script_phases = { :name => 'Precompile',
+  s.script_phase = { :name => 'Precompile',
                       :script => 'cd "${PODS_TARGET_SRCROOT}"
                 ruby dependency.rb
                 cd - ',
