@@ -24,7 +24,6 @@ Pod::Spec.new do |s|
   s.script_phases = [
   { :name => 'Precompile',
     :script => 'ruby ${PODS_TARGET_SRCROOT}/dependency.rb',
-    :shell_path => '/usr/bin/ruby',
     :execution_position => :before_compile
   }
 ]
