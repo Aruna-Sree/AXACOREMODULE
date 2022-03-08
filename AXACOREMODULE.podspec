@@ -31,8 +31,7 @@ Pod::Spec.new do |s|
 # ]
 
   s.static_framework = true
-  # s.dependency 'CAMobileAppAnalytics'
-  s.dependency = { :git => 'https://github.com/CA-Application-Performance-Management/CAMobileAppAnalytics.git', :commit => '00bbff6' }
+  s.dependency 'CAMobileAppAnalytics'
 
 # s.prepare_command = 'ruby dependency.rb'
 end
