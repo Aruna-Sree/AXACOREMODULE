@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AXACOREMODULE'
-  s.version          = '1.3.0'
+  s.version          = '1.3.1'
   s.summary          = 'A short description of AXACOREMODULE.'
   s.description      = 'Testing module'
 
@@ -20,17 +20,19 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'AXACOREMODULE/Classes/**/*'
-  s.resources = 'dependency.rb'
-  s.script_phases = [
-  { :name => 'Precompile',
-    :script => 'cd "${PODS_TARGET_SRCROOT}"
-                ruby dependency.rb
-                cd - ',
-    :execution_position => :before_compile
-  }
-]
+#   s.resources = 'dependency.rb'
+#   s.script_phases = [
+#   { :name => 'Precompile',
+#     :script => 'cd "${PODS_TARGET_SRCROOT}"
+#                 ruby dependency.rb
+#                 cd - ',
+#     :execution_position => :before_compile
+#   }
+# ]
 
   s.static_framework = true
-  s.dependency 'CAMobileAppAnalytics'
+  # s.dependency 'CAMobileAppAnalytics'
+  s.dependency = { :git => 'https://github.com/CA-Application-Performance-Management/CAMobileAppAnalytics.git', :commit => '00bbff6' }
+
 # s.prepare_command = 'ruby dependency.rb'
 end
