@@ -8,7 +8,9 @@ project = Xcodeproj::Project.open(project_path)
 project.targets.each do |target|
     if target.name == "AXACOREMODULE" && !(target.headers_build_phase.file_display_names.include? "CAMDOReporter.h")
         group = project.main_group.find_subpath(File.join('Pods'),true )
-        file_ref=group.new_file('Headers/Public/CAMobileAppAnalytics/CAMDOReporter.h')
+        file_ref_real_path = File.realpath 'Headers/Public/CAMobileAppAnalytics/CAMDOReporter.h'
+        puts file_ref_real_path
+        file_ref=group.new_file(file_ref_real_path)
         build_file = target.headers_build_phase.add_file_reference (file_ref)
         build_file.settings = { 'ATTRIBUTES' => ['Public'] }
         project.save
