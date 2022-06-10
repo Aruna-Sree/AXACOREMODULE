@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AXACOREMODULE'
-  s.version          = '1.3.9'
+  s.version          = '1.4.0'
   s.summary          = 'A short description of AXACOREMODULE.'
   s.description      = 'Testing module'
 
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 ]
 
   s.static_framework = true
-  s.dependency 'CAMobileAppAnalytics/xcframework', '~> 2022.6.0.2'
+  s.dependency 'CAMobileAppAnalytics/xcframework', '~> 2022.6.0.1'
 
 # s.prepare_command = 'ruby dependency.rb'
 end
